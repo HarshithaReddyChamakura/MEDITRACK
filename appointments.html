@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Appointments</title>
+  <link rel="stylesheet" href="assets/css/style.css"/>
+</head>
+<body>
+  <img src="assets/images/appointment.webp.jpg" alt="Appointment Image" width="150"/>
+
+  <h2>Book an Appointment</h2>
+  <form id="appointmentForm">
+    <input type="text" id="patientName" placeholder="Patient Name" required /><br><br>
+    <input type="date" id="appointmentDate" required /><br><br>
+
+    <select id="doctorSelect" required>
+      <option value="" disabled selected>Select a Doctor</option>
+      <option value="Dr. Smith">Dr. Smith</option>
+      <option value="Dr. John">Dr. John</option>
+    </select><br><br>
+
+    <button type="submit">Book Appointment</button>
+  </form>
+
+  <h3>Appointments:</h3>
+  <ul id="appointmentList"></ul>
+
+  <script>
+    document.getElementById("appointmentForm").addEventListener("submit", function (event) {
+      event.preventDefault();
+      const name = document.getElementById("patientName").value;
+      const date = document.getElementById("appointmentDate").value;
+      const doctor = document.getElementById("doctorSelect").value;
+
+      if (name && date && doctor) {
+        const li = document.createElement("li");
+        li.textContent = `Appointment for ${name} with ${doctor} on ${date} `;
+
+        // Create cancel button
+        const cancelBtn = document.createElement("button");
+        cancelBtn.textContent = "Cancel";
+        cancelBtn.style.marginLeft = "10px";
+        cancelBtn.addEventListener("click", function () {
+          li.remove(); // Remove the appointment item from the list
+        });
+
+        li.appendChild(cancelBtn);
+        document.getElementById("appointmentList").appendChild(li);
+
+        document.getElementById("appointmentForm").reset();
+      }
+    });
+  </script>
+</body>
+</html>

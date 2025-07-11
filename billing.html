@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Billing & Payments</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <img src="assets/images/Bill.webp.jpg" alt="" width="150">
+</head>
+<body>
+    <h2>💰 Billing</h2>
+    <form id="billingForm">
+        <input type="text" id="patientName" placeholder="Patient Name" required>
+        <input type="number" id="amount" placeholder="Amount (USD)" required>
+        <button type="submit">Generate Bill</button>
+    </form>
+    <h3>Generated Bills</h3>
+    <ul id="billsList"></ul>
+
+    <script src="assets/js/billing.js"></script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Register - MediTrack</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="auth-container">
+    <h2>Register - MediTrack</h2>
+    <select id="registerRole">
+      <option value="doctor">Doctor</option>
+      <option value="patient">Patient</option>
+    </select>
+    <input type="text" id="registerName" placeholder="Full Name" />
+    <input type="email" id="registerEmail" placeholder="Email" />
+    <input type="password" id="registerPassword" placeholder="Password" />
+    <button onclick="register()">Register</button>
+    <p>Already have an account? <a href="login.html">Login</a></p>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
